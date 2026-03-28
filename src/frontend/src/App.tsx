@@ -31,6 +31,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { toast } from "sonner";
+import AdminPage from "./AdminPage";
 import { useSubmitBooking } from "./hooks/useQueries";
 
 const NAV_LINKS = [
@@ -961,6 +962,15 @@ function Footer() {
 }
 
 export default function App() {
+  if (window.location.pathname === "/admin") {
+    return (
+      <>
+        <Toaster position="top-right" richColors />
+        <AdminPage />
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen font-poppins">
       <Toaster position="top-right" richColors />
